@@ -1,0 +1,205 @@
+.header-wrapper {
+  padding: 0 30px;
+}
+.linkedin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 0 0 20px 20px;
+  height: 100px;
+  padding: 10px;
+}
+.logo-and-search {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.logo-and-search img {
+  width: 100px;
+}
+.logo-and-search input {
+  width: 300px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 5px 20px;
+}
+.header-navigation ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style: none;
+}
+.header-navigation img {
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.header-navigation a {
+  text-decoration: none;
+  color: #343333;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+main {
+  display: flex;
+  gap: 10px;
+  padding: 40px;
+  justify-content: space-between;
+}
+.profile-card-wrapper {
+  width: 350px;
+  height: 400px;
+  position: relative;
+  border: 1px solid #343333;
+  border-radius: 30px;
+  /* border-bottom: none; */
+  background-color: #343333;
+}
+.profile-card-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.feed-wrapper {
+}
+.friends-card {
+  width: 400px;
+  border: 1px solid;
+  border-radius: 30px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.profile-card {
+  width: 100%;
+  position: absolute;
+  height: 82%;
+  bottom: 0;
+  background-color: white;
+  border-radius: 30px;
+  border-bottom: none;
+}
+.profile-card img {
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translateY(-50%);
+}
+.profileImg-fullname {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.line {
+  margin-top: 20px;
+  height: 1px;
+  width: 100%;
+  background-color: #a8a8a8;
+}
+.card-text {
+  padding: 10px;
+  color: #343333;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.card-text p {
+  margin-top: 5px;
+}
+.post-input {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 600px;
+}
+.img-and-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.img-and-input img {
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.post-types {
+  display: flex;
+  justify-content: space-around;
+}
+.post-types div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.img-and-input input {
+  border-radius: 51px;
+  border: 1px solid #ccc;
+  width: 500px;
+  height: 50px;
+  padding: 0 20px;
+}
+.post-author {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.post-author img {
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.post-author span {
+  font-size: 14px;
+  color: #a8a6a6;
+}
+.post {
+  padding: 10px;
+  border-radius: 20px;
+
+  border: 1px solid #ccc;
+}
+.rendering-posts {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.post p {
+  margin-top: 10px;
+}
+.user-suggestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+}
+.friends-card img {
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-suggestion button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 23.294px;
+  border-radius: 10px;
+  padding: 5px 20px;
+  cursor: pointer;
+  color: #343333;
+  margin-top: 5px;
+}

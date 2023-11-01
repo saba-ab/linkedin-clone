@@ -1,0 +1,215 @@
+
+.ProfileBackgroundSection{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    padding: 40px;
+
+}
+.profile-section img{
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    border-radius: 35px;
+
+}
+.WhiteDiv{
+    width: 97%;
+    height: 435px;
+    position: absolute;
+    background-color: white;
+    top: 180px;
+    border-radius: 40px;
+    border: 0.95px solid rgb(240, 236, 236);
+}
+.profile-section{
+    width: 100%;
+}
+.redFlag{
+    position: absolute;
+    top: calc(100% - 446px);
+    padding-left: 12px;
+}
+
+.profileImageIcon, .nameSurname, .degree, .adress, .contactInfoButton{
+    position: absolute;
+    left: 45%;
+    transform: translate(45);
+    top: 80px;
+}
+.nameSurname{
+    top: 390px;
+    left: 1200px;
+}
+.degree, .adress{
+    top: 425px;
+    left: 1170px;
+}
+.adress{
+    top:450px;
+    left: 1250px;
+}
+.contactInfoButton{
+    top:480px;
+    left: 1260px;
+    cursor: pointer;
+}
+.contactInfoButton h5{
+    color: #1380BB;
+}
+.relatedLinks{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    position: absolute;
+    left: 45.7%;
+    top: 510px;
+}
+.openTo, .addprofileSection, .more {
+    border: 1px solid #1380BB;
+    border-radius: 30px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    color: #1380BB;
+    cursor: pointer;
+}
+.addprofileSection{
+    width: 120px;
+}
+.more{
+    color: grey;
+    border: 1px solid grey;
+}
+.leftSideItems{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 170px;
+    right: 150px;
+    padding-top: 90px;
+}
+.ediTCameraIcons{
+    display: flex;
+    gap: 20px;
+}
+.editPublicProfile, .addprofilelanguage{
+    cursor: pointer;
+    color: #1380BB;
+}
+.profileEditLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.profile-feed-wrapper{
+    display: flex;
+    padding: 80px;
+}
+.profile-feed-wrapper main{
+    width: 1250px;
+    /* border: 1px solid grey; */
+}
+.profile-feed-wrapper aside{
+    width: 400;
+    border: 1px solid grey;
+}
+.mainInformation, .skills{
+    border: 0.95px solid rgb(240, 236, 236);
+    border-radius: 40px;
+}
+.skills{
+    margin-top: 20px;
+}
+.mainInfoHeader, .skillsHeader{
+    display: flex;
+    flex-direction: row;
+    gap: 840px;
+    padding:30px;
+}
+.text-content, .skills-text-content{
+    width: 1100px;
+    padding: 30px;
+}
+.skills-text-content p{
+    width: 100%;
+}
+.showMore{
+    width: 1100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+.showMore:hover{
+    text-decoration: underline;
+    color: #1380BB;
+}
+.experienceEducationDivs{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap:15px;    
+    margin-top: 20px;
+}
+.experience, .education, .resources, .analytics{
+    border: 0.95px solid rgb(240, 236, 236);
+    border-radius: 40px;
+}
+.experienceHeader, .educationHeader, .resourcesHeader, .analyticsHeader{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    gap: 320px;   
+}
+.experienceContent, .resourceContent, .analyticsContent{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    gap: 15px;
+}
+.showMore{
+    width: auto;
+    margin-right: 70px;
+    padding-bottom: 30px;
+}
+.educationContent{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 30px;
+}
+.gtu{
+    display: flex;
+    flex-direction: row;
+}
+.gtuDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 14px;
+}
+.private{
+    display: flex;
+    gap: 4px;
+}
+.creatorMode, .myNetwork, .demographicdetails, .profileViewed, .impressions, .appearancesdetails{
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #e6e4e4;
+    padding-bottom: 10px;
+    width: 400px;
+}
+.appearancesdetails{
+    border-bottom: none;
+}
+.signal, .network, .demographic, .myimpressions, .appearances{
+    display: flex;
+    justify-content: center;
+}
+.marginedit{
+    margin-top: 20px;
+}

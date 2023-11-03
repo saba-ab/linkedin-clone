@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/login.css";
-import { footerListItems } from "../helper";
+import FooterList from "../components/FooterList";
 import workshopLeftImg from "../images/login-registration/workspace-left.svg";
 import workshopRightImg from "../images/login-registration/workspace.svg";
 import blueCircle from "../images/login-registration/blue-circle.svg";
@@ -82,13 +82,7 @@ function Login() {
           <Button text="Register" onClick={() => navigate("/registration")} />
         </div>
       </div>
-      <div className="login-footer">
-        <ul>
-          {footerListItems.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </div>
+      <FooterList />
       <div className="absolute-images">
         <img src={workshopLeftImg} alt="circle" className="workshop-left" />
         <img src={workshopRightImg} alt="circle" className="workshop-right" />

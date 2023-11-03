@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Header from "../components/Header";
 import "../styles/feed.css";
 import userCardBackground from "../images/feed/userCardBackground.png";
@@ -16,22 +16,35 @@ import {
   getDoc,
   doc,
   query,
+  orderBy,
 } from "firebase/firestore";
 import moment from "moment";
 import { app } from "../helper";
+import FooterRows from "../components/FooterRows";
+import FooterList from "../components/FooterList";
+import FriendsCard from "../components/FriendsCard";
+import { userContext, userListContext } from "../Context";
+import { useNavigate } from "react-router-dom";
 function Feed() {
+  const navigate = useNavigate();
+  const { currentUserInfo, setCurrentUserInfo } = useContext(userContext);
+  const { userList, setUserList } = useContext(userListContext);
+  console.log(userList);
+  const [authedUser, setAuthedUser] = useState("");
   const db = getFirestore(app);
   const auth = getAuth();
   const [postContent, setPostContent] = useState("");
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
-  const [authedUser, setAuthedUser] = useState("");
+  useEffect(() => {
+    setCurrentUserInfo(authedUser);
+  }, [authedUser]);
   const handlePostSubmit = () => {
     addPost(postContent);
     setPostContent("");
   };
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && e.target.value.trim() !== "") {
       handlePostSubmit();
     }
   };
@@ -42,7 +55,8 @@ function Feed() {
         return;
       }
       const postsRef = collection(db, "users", auth.currentUser.uid, "posts");
-      const postSnapshot = await getDocs(query(postsRef));
+      const postsQuery = query(postsRef, orderBy("postedAt", "desc"));
+      const postSnapshot = await getDocs(postsQuery);
       const userRef = doc(db, "users", auth.currentUser.uid);
       const userDoc = await getDoc(userRef);
       const userData = userDoc.data();
@@ -70,6 +84,8 @@ function Feed() {
     };
     fetchAllUsers().then((users) => {
       setUsers(users);
+      setUserList(users);
+      setCurrentUserInfo(authedUser);
     });
   }, [db]);
   async function addPost(content) {
@@ -89,6 +105,9 @@ function Feed() {
       console.error("Error adding post: ", error);
     }
   }
+  const goToProfile = () => {
+    navigate("/profile");
+  };
 
   return (
     <div className="feed-container">
@@ -159,26 +178,17 @@ function Feed() {
                     <span>{moment(post.postedAt).fromNow()}</span>
                   </div>
                   <p>{post.content}</p>
-                  {/* Add other post properties here as needed */}
                 </div>
               ))}
           </div>
         </div>
-        <div className="friends-card">
-          <h2>Add to your feed</h2>
-          {users.map((user, index) => {
-            return (
-              <div key={index} className="user-suggestion">
-                <img src={defaultPic} alt="profile" />
-                <div>
-                  <p>{user.fullName}</p>
-                  <button>+ follow</button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <FriendsCard users={users} />
       </main>
+      <button onClick={goToProfile}>goto profile</button>
+      <footer>
+        <FooterRows />
+        <FooterList />
+      </footer>
     </div>
   );
 }
